@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voca Flip</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Satisfy|Stoke|Yellowtail|Geo|Oswald|Lobster" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <style>
+        body {
+            margin: 0; /* ページの外側の余白を削除 */
+        }
+        .page {
+            display: none;
+            height: 100vh; /* ページ全体の高さを画面の高さと同じにする */
+        }
+        .current-page {
+            display: block;
+        }
+        #recordButton {
+            font-size: 18px;
+            padding: 15px 30px;
+            background-color: #3399ff; /* ブルー */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        #recordButton:hover {
+            background-color: #2672cb; /* ダークブルー */
+        }
+        
+        figure img {
+	        max-width: 100%;	
+	        vertical-align: bottom;
+	        line-height: 1.0em;
+        }
+    </style>
+</head>
+
+<header> 
+  <h1> </h1>
+</header>
+
+<body>
+    <div id="book-container">
+        <div id="page0" class="page current-page">
+            <h2></h2>
+            <h3></h3>
+            <p></p>
+            <button2 class="nextButton2" data-next-page="page1">Next</button2>
+            <h4></h4>
+        </div>
+        <div id="page1" class="page">
+            <h2></h2>
+            <img src="img/page01.png" alt="Page 1 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page2">Next</button>
+        </div>
+        <div id="page2" class="page">
+            <h2></h2>
+            <img src="img/page02.png" alt="Page 2 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page3">Next</button>
+        </div>
+        <div id="page3" class="page">
+            <h2></h2>
+            <img src="img/page03.png" alt="Page 3 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page4">Next</button>
+        </div>
+        <div id="page4" class="page">
+            <h2></h2>
+            <img src="img/page04.png" alt="Page 4 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page5">Next</button>
+        </div>
+         <div id="page5" class="page">
+            <h2></h2>
+            <img src="img/page05.png" alt="Page 5 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page6">Next</button>
+        </div>
+        <div id="page6" class="page">
+            <h2></h2>
+            <img src="img/page06.png" alt="Page 6 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page7">Next</button>
+        </div>
+        <div id="page7" class="page">
+            <h2></h2>
+            <img src="img/page07.png" alt="Page 7 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page8">Next</button>
+        </div>
+        <div id="page8" class="page">
+            <h2></h2>
+            <img src="img/page08.png" alt="Page 8 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button id="recordButton" onclick="startRecording()">Record</button>
+        </div>
+         <div id="page9" class="page">
+            <h2></h2>
+            <img src="img/page09.png" alt="Page 9 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page10">Next</button>
+        </div>
+        <div id="page10" class="page">
+            <h2></h2>
+            <img src="img/page10.png" alt="Page 10 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page11">Next</button>
+        </div>
+        <div id="page11" class="page">
+            <h2></h2>
+            <img src="img/page11.png" alt="Page 11 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page12">Next</button>
+        </div>
+        <div id="page12" class="page">
+            <h2></h2>
+            <img src="img/page12.png" alt="Page 12 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page13">Next</button>
+        </div>
+         <div id="page13" class="page">
+            <h2></h2>
+            <img src="img/page13.png" alt="Page 13 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+              <button id="recordButton" onclick="startRecording()">Record</button>
+        </div>
+        <div id="page14" class="page">
+            <h2></h2>
+            <img src="img/page14.png" alt="Page 14 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page15">Next</button>
+        </div>
+        <div id="page15" class="page">
+            <h2></h2>
+            <img src="img/page15.png" alt="Page 15 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page16">Next</button>
+        </div>
+        <div id="page16" class="page">
+            <h2></h2>
+            <img src="img/page16.png" alt="Page 4 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page17">Next</button>
+        </div>
+         <div id="page17" class="page">
+            <h2></h2>
+            <img src="img/page17.png" alt="Page 17 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page18">Next</button>
+        </div>
+        <div id="page18" class="page">
+            <h2></h2>
+            <img src="img/page18.png" alt="Page 18 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page19">Next</button>
+        </div>
+        <div id="page19" class="page">
+            <h2></h2>
+            <img src="img/page19.png" alt="Page 19 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page20">Next</button>
+        </div>
+        <div id="page20" class="page">
+            <h2></h2>
+            <img src="img/page20.png" alt="Page 20 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+            <button class="nextButton" data-next-page="page21">Next</button>
+        </div>
+        <div id="page21" class="page">
+            <h2></h2>
+            <img src="img/page21.png" alt="Page 21 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+             <button class="nextButton" data-next-page="page22">Next</button>
+        </div>
+        <div id="page22" class="page">
+            <h2></h2>
+            <img src="img/page22.png" alt="Page 22 Image">
+            <img src="img/footer.png" alt="Page 22 Image">
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 22;
+        let recognition;
+
+        document.querySelectorAll('.nextButton').forEach(button => {
+            button.addEventListener('click', nextPage);
+        });
+        
+        document.querySelectorAll('.nextButton2').forEach(button => {
+            button.addEventListener('click', nextPage);
+        });
+
+        function startRecording() {
+            if (!recognition) {
+                recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = 'en-US';
+
+                recognition.onresult = (event) => {
+                    const result = event.results[0][0].transcript.toLowerCase();
+                    console.log('Recognized:', result);
+
+                    if (result.includes('then i will huff and puff and blow your house down')) {
+                        nextPage();
+                    }
+                };
+
+                recognition.onerror = (event) => {
+                    console.error('Speech recognition error:', event.error);
+                };
+            }
+
+            recognition.start();
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                window.scrollTo(0, 1500);
+                document.getElementById(`page${currentPage}`).classList.remove('current-page');
+                currentPage++;
+                document.getElementById(`page${currentPage}`).classList.add('current-page');
+            } else if (currentPage === totalPages) {
+                alert('絵本を読み終えました！');
+            }
+
+            if (currentPage === 8 || currentPage === 13) {
+                startRecording();
+            }
+        }
+    </script>
+</body>
+</body>
+</html>
